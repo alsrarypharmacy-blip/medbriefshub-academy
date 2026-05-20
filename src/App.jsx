@@ -1,19 +1,46 @@
 export default function App() {
+  const services = [
+    {
+      title: "Medical Research Support",
+      desc: "Full research supervision from idea selection to publication."
+    },
+    {
+      title: "Scientific Publishing",
+      desc: "Publishing support in Scopus, PubMed and Web of Science journals."
+    },
+    {
+      title: "Saudi Board Research",
+      desc: "Research pathways designed for Saudi Board applicants."
+    },
+    {
+      title: "Academic Promotion",
+      desc: "Professional support for academic promotion and fellowships."
+    },
+    {
+      title: "CME Accredited Courses",
+      desc: "Certified medical education and scientific workshops."
+    },
+    {
+      title: "Data Analysis",
+      desc: "Advanced biostatistics and SPSS analysis services."
+    }
+  ];
+
   return (
-    <div style={{ fontFamily: "Arial, sans-serif", background: "#f8fafc", color: "#0f172a" }}>
+    <div style={{ fontFamily: "Arial", background: "#f4f7fb" }}>
       
-      {/* Navbar */}
+      {/* NAVBAR */}
       <nav
         style={{
-          background: "#0B1F3A",
+          background: "#071739",
           color: "white",
-          padding: "18px 40px",
+          padding: "20px 50px",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
           position: "sticky",
           top: 0,
-          zIndex: 1000,
+          zIndex: 1000
         }}
       >
         <h2>MedBriefsHub Academy</h2>
@@ -26,37 +53,42 @@ export default function App() {
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* HERO */}
       <section
         id="home"
         style={{
           minHeight: "90vh",
+          background:
+            "linear-gradient(to right,#071739,#0b2d67,#145da0)",
+          color: "white",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
           textAlign: "center",
-          padding: "40px",
-          background:
-            "linear-gradient(to right, #0B1F3A, #2563EB)",
-          color: "white",
+          padding: "40px"
         }}
       >
-        <h1 style={{ fontSize: "56px", maxWidth: "900px" }}>
+        <h1
+          style={{
+            fontSize: "60px",
+            maxWidth: "900px",
+            marginBottom: "20px"
+          }}
+        >
           Empowering Medical Research & Scientific Publishing
         </h1>
 
         <p
           style={{
-            marginTop: "20px",
             maxWidth: "700px",
             fontSize: "20px",
-            lineHeight: "1.8",
+            lineHeight: "1.8"
           }}
         >
-          Professional academic platform helping doctors, researchers,
-          and healthcare students publish high-quality scientific research
-          in international indexed journals.
+          MedBriefsHub Academy provides professional scientific research,
+          publication guidance, academic mentoring, and accredited medical
+          training programs for healthcare professionals and students.
         </p>
 
         <div style={{ marginTop: "30px", display: "flex", gap: "20px" }}>
@@ -65,12 +97,12 @@ export default function App() {
         </div>
       </section>
 
-      {/* Services */}
+      {/* SERVICES */}
       <section
         id="services"
         style={{
-          padding: "80px 40px",
-          background: "#ffffff",
+          padding: "100px 40px",
+          background: "white"
         }}
       >
         <h2 style={sectionTitle}>Our Services</h2>
@@ -79,19 +111,22 @@ export default function App() {
           {services.map((service, index) => (
             <div key={index} style={cardStyle}>
               <h3>{service.title}</h3>
-              <p>{service.desc}</p>
+
+              <p style={{ color: "#444", lineHeight: "1.8" }}>
+                {service.desc}
+              </p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* About */}
+      {/* ABOUT */}
       <section
         id="about"
         style={{
-          padding: "80px 40px",
+          padding: "100px 40px",
           background: "#eef4ff",
-          textAlign: "center",
+          textAlign: "center"
         }}
       >
         <h2 style={sectionTitle}>About MedBriefsHub Academy</h2>
@@ -100,108 +135,58 @@ export default function App() {
           style={{
             maxWidth: "900px",
             margin: "auto",
+            lineHeight: "2",
             fontSize: "18px",
-            lineHeight: "1.9",
+            color: "#333"
           }}
         >
-          MedBriefsHub Academy is a specialized medical research and
-          scientific publishing platform dedicated to supporting healthcare
-          professionals and students throughout their complete research
-          journey — from idea generation to publication in Q1/Q2 indexed journals.
+          We are a professional medical research and publishing academy focused
+          on supporting doctors, researchers, students, and healthcare
+          professionals throughout their scientific journey.
         </p>
-
-        <div
-          style={{
-            marginTop: "50px",
-            display: "flex",
-            justifyContent: "center",
-            gap: "40px",
-            flexWrap: "wrap",
-          }}
-        >
-          <div style={statCard}>
-            <h1>95%</h1>
-            <p>Publication Success</p>
-          </div>
-
-          <div style={statCard}>
-            <h1>500+</h1>
-            <p>Researchers Supported</p>
-          </div>
-
-          <div style={statCard}>
-            <h1>Q1/Q2</h1>
-            <p>Indexed Journals</p>
-          </div>
-        </div>
       </section>
 
-      {/* Publication Path */}
-      <section
-        style={{
-          padding: "80px 40px",
-          background: "white",
-          textAlign: "center",
-        }}
-      >
-        <h2 style={sectionTitle}>Research Journey</h2>
-
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            gap: "15px",
-            flexWrap: "wrap",
-            marginTop: "40px",
-          }}
-        >
-          {[
-            "Idea",
-            "Proposal",
-            "Ethics",
-            "Data Collection",
-            "Analysis",
-            "Writing",
-            "Publication",
-          ].map((step, index) => (
-            <div key={index} style={timelineStep}>
-              {step}
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Contact */}
+      {/* CONTACT */}
       <section
         id="contact"
         style={{
-          padding: "80px 40px",
-          background: "#0B1F3A",
+          padding: "100px 40px",
+          background: "#071739",
           color: "white",
-          textAlign: "center",
+          textAlign: "center"
         }}
       >
         <h2 style={sectionTitleWhite}>Contact Us</h2>
 
         <p>Email: info@medbriefshub.com</p>
-        <p>WhatsApp: +966 57 233 8037</p>
-        <p>Telegram: @MedBriefsHub</p>
+        <p>WhatsApp: +966 500000000</p>
 
-        <button style={{ ...primaryButton, marginTop: "20px" }}>
+        <button
+          style={{
+            marginTop: "25px",
+            background: "#145da0",
+            color: "white",
+            border: "none",
+            padding: "15px 30px",
+            borderRadius: "10px",
+            fontSize: "16px",
+            cursor: "pointer"
+          }}
+        >
           Contact Now
         </button>
       </section>
 
-      {/* Footer */}
+      {/* FOOTER */}
       <footer
         style={{
-          background: "#061120",
-          color: "#cbd5e1",
+          background: "#020c1b",
+          color: "white",
           textAlign: "center",
-          padding: "20px",
+          padding: "25px"
         }}
       >
-        © 2025 MedBriefsHub Academy. All rights reserved.
+        © 2026 MedBriefsHub Academy — All Rights Reserved
       </footer>
     </div>
   );
@@ -210,94 +195,52 @@ export default function App() {
 const linkStyle = {
   color: "white",
   textDecoration: "none",
-  fontWeight: "bold",
+  fontSize: "16px"
 };
 
 const primaryButton = {
-  background: "#06B6D4",
+  background: "#1e88e5",
   color: "white",
   border: "none",
-  padding: "14px 28px",
+  padding: "15px 30px",
   borderRadius: "10px",
-  cursor: "pointer",
   fontSize: "16px",
+  cursor: "pointer"
 };
 
 const secondaryButton = {
   background: "transparent",
   color: "white",
   border: "2px solid white",
-  padding: "14px 28px",
+  padding: "15px 30px",
   borderRadius: "10px",
-  cursor: "pointer",
   fontSize: "16px",
+  cursor: "pointer"
 };
 
 const sectionTitle = {
   textAlign: "center",
-  marginBottom: "50px",
-  fontSize: "40px",
+  fontSize: "42px",
+  marginBottom: "60px",
+  color: "#071739"
 };
 
 const sectionTitleWhite = {
   textAlign: "center",
+  fontSize: "42px",
   marginBottom: "40px",
-  fontSize: "40px",
-  color: "white",
+  color: "white"
 };
 
 const gridStyle = {
   display: "grid",
   gridTemplateColumns: "repeat(auto-fit,minmax(250px,1fr))",
-  gap: "25px",
+  gap: "30px"
 };
 
 const cardStyle = {
-  background: "#f8fafc",
+  background: "#f8fbff",
   padding: "30px",
-  borderRadius: "16px",
-  boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+  borderRadius: "15px",
+  boxShadow: "0 5px 20px rgba(0,0,0,0.08)"
 };
-
-const statCard = {
-  background: "white",
-  padding: "30px",
-  borderRadius: "16px",
-  minWidth: "220px",
-  boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
-};
-
-const timelineStep = {
-  background: "#2563EB",
-  color: "white",
-  padding: "16px 24px",
-  borderRadius: "12px",
-  fontWeight: "bold",
-};
-
-const services = [
-  {
-    title: "Research Proposal",
-    desc: "Professional proposal development for academic and medical research.",
-  },
-  {
-    title: "Biostatistics",
-    desc: "Advanced statistical analysis and interpretation for healthcare studies.",
-  },
-  {
-    title: "Scientific Writing",
-    desc: "Manuscript preparation following international journal standards.",
-  },
-  {
-    title: "Publication Support",
-    desc: "Complete submission support for Q1/Q2 indexed journals.",
-  },
-  {
-    title: "Saudi Board Research",
-    desc: "Research assistance for Saudi Board and residency applicants.",
-  },
-  {
-    title: "SCFHS CME Courses",
-    desc: "Accredited medical education and CME activities.",
-  },
-];
