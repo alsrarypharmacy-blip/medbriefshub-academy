@@ -1,12 +1,44 @@
-import React from "react";
-
 export default function App() {
+
+  const services = [
+    {
+      title: "Medical Research",
+      desc: "Professional support for clinical and academic medical research.",
+      image: "/research.jpg",
+    },
+    {
+      title: "Scientific Publication",
+      desc: "Publication assistance for Scopus & ISI indexed journals.",
+      image: "/publication.jpg",
+    },
+    {
+      title: "Data Analysis",
+      desc: "Advanced statistical analysis and healthcare data visualization.",
+      image: "/data-analysis.jpg",
+    },
+    {
+      title: "Research Proposal",
+      desc: "Complete research proposal writing for universities and boards.",
+      image: "/research-proposal.jpg",
+    },
+    {
+      title: "Saudi Board Support",
+      desc: "Academic and research support for Saudi Board trainees.",
+      image: "/saudi-board.jpg",
+    },
+    {
+      title: "CME Courses",
+      desc: "Accredited medical education and CME training programs.",
+      image: "/cme-courses.jpg",
+    },
+  ];
+
   return (
-    <div style={appStyle}>
-      
+    <div style={{ fontFamily: "Arial", background: "#f4f7fb" }}>
+
       {/* Navbar */}
       <nav style={navbar}>
-        <h2 style={logo}>MedBriefsHub Academy</h2>
+        <h2>MedBriefsHub Academy</h2>
 
         <div style={navLinks}>
           <a href="#home" style={link}>Home</a>
@@ -16,202 +48,119 @@ export default function App() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section
-        id="home"
-        style={{
-          ...heroSection,
-          backgroundImage:
-            "linear-gradient(rgba(2,12,27,0.75), rgba(11,31,58,0.85)), url('/banner.jpg')",
-        }}
-      >
+      {/* Hero */}
+      <section id="home" style={hero}>
+
+        <div style={overlay}></div>
+
         <div style={heroContent}>
           <h1 style={heroTitle}>
-            Empowering Medical Research & Scientific Publishing
+            Empowering Medical Research
+            <br />
+            & Scientific Publishing
           </h1>
 
           <p style={heroText}>
-            MedBriefsHub Academy provides professional scientific research,
-            publication guidance, academic mentoring, and accredited medical
-            training programs for healthcare professionals and students.
+            Professional scientific research, publication guidance,
+            academic mentoring, healthcare education,
+            and accredited medical training programs.
           </p>
 
           <div style={heroButtons}>
-            <button style={primaryButton}>Get Started</button>
-            <button style={secondaryButton}>Book Consultation</button>
+            <button style={primaryBtn}>Get Started</button>
+            <button style={secondaryBtn}>Book Consultation</button>
           </div>
         </div>
       </section>
 
       {/* Services */}
-      <section id="services" style={sectionStyle}>
+      <section id="services" style={section}>
         <h2 style={sectionTitle}>Our Services</h2>
 
-        <div style={servicesGrid}>
-          
-          <div style={cardStyle}>
-            <img
-              src="/research.jpg"
-              alt="Research"
-              style={imageStyle}
-            />
-            <div style={cardContent}>
-              <h3>Medical Research</h3>
-              <p>
-                Professional support for clinical and academic medical research.
-              </p>
-            </div>
-          </div>
+        <div style={grid}>
 
-          <div style={cardStyle}>
-            <img
-              src="/publication.jpg"
-              alt="Publication"
-              style={imageStyle}
-            />
-            <div style={cardContent}>
-              <h3>Scientific Publication</h3>
-              <p>
-                Publication assistance for Scopus & ISI indexed journals.
-              </p>
-            </div>
-          </div>
+          {services.map((service, index) => (
 
-          <div style={cardStyle}>
-            <img
-              src="/data-analysis.jpg"
-              alt="Data Analysis"
-              style={imageStyle}
-            />
-            <div style={cardContent}>
-              <h3>Data Analysis</h3>
-              <p>
-                Advanced statistical analysis and healthcare data visualization.
-              </p>
-            </div>
-          </div>
+            <div key={index} style={card}>
 
-          <div style={cardStyle}>
-            <img
-              src="/research-proposal.jpg"
-              alt="Research Proposal"
-              style={imageStyle}
-            />
-            <div style={cardContent}>
-              <h3>Research Proposal</h3>
-              <p>
-                Complete research proposal writing for universities and boards.
-              </p>
-            </div>
-          </div>
+              <img
+                src={service.image}
+                alt={service.title}
+                style={cardImage}
+              />
 
-          <div style={cardStyle}>
-            <img
-              src="/Saudi-board.jpg"
-              alt="Saudi Board"
-              style={imageStyle}
-            />
-            <div style={cardContent}>
-              <h3>Saudi Board Support</h3>
-              <p>
-                Academic and research support for Saudi Board trainees.
-              </p>
-            </div>
-          </div>
+              <div style={cardContent}>
+                <h3>{service.title}</h3>
+                <p>{service.desc}</p>
+              </div>
 
-          <div style={cardStyle}>
-            <img
-              src="/CME-COURSES.jpg"
-              alt="CME Courses"
-              style={imageStyle}
-            />
-            <div style={cardContent}>
-              <h3>CME Courses</h3>
-              <p>
-                Accredited medical education and CME training programs.
-              </p>
             </div>
-          </div>
+
+          ))}
 
         </div>
       </section>
 
       {/* About */}
-      <section style={aboutSection} id="about">
-        <div style={aboutContainer}>
-          
-          <div style={aboutText}>
-            <h2 style={sectionTitle}>About Us</h2>
+      <section id="about" style={aboutSection}>
 
-            <p style={aboutParagraph}>
-              MedBriefsHub Academy is a professional platform specializing in
-              scientific research, medical publication, academic mentorship,
-              healthcare education, and advanced statistical analysis.
-            </p>
+        <div style={aboutText}>
+          <h2 style={sectionTitle}>About Us</h2>
 
-            <p style={aboutParagraph}>
-              Our mission is to empower healthcare professionals, researchers,
-              and students with world-class academic solutions and publication
-              excellence.
-            </p>
-          </div>
+          <p style={aboutParagraph}>
+            MedBriefsHub Academy is a professional platform specializing in:
+          </p>
 
-          <img
-            src="/doctors.jpg"
-            alt="Doctors"
-            style={aboutImage}
-          />
-
+          <ul style={list}>
+            <li>Medical Research</li>
+            <li>Scientific Publication</li>
+            <li>Healthcare Education</li>
+            <li>Academic Mentorship</li>
+            <li>Saudi Board Preparation</li>
+          </ul>
         </div>
+
+        <img
+          src="/doctors.jpg"
+          alt="Doctors"
+          style={aboutImage}
+        />
+
       </section>
 
       {/* Contact */}
       <section id="contact" style={contactSection}>
-        <h2 style={sectionTitle}>Contact Us</h2>
 
-        <div style={contactBox}>
-          <p>Email: info@medbriefshub.com</p>
-          <p>WhatsApp: +966 500000000</p>
-          <p>Saudi Arabia 🇸🇦</p>
-        </div>
+        <h2 style={contactTitle}>Contact Us</h2>
+
+        <p>Email: info@medbriefshub.com</p>
+        <p>WhatsApp: +966 500000000</p>
+        <p>Saudi Arabia 🇸🇦</p>
+
       </section>
 
       {/* Footer */}
       <footer style={footer}>
-        <p>
-          © 2026 MedBriefsHub Academy — All Rights Reserved.
-        </p>
+        © 2026 MedBriefsHub Academy — All Rights Reserved.
       </footer>
 
     </div>
   );
 }
 
-/* Styles */
-
-const appStyle = {
-  fontFamily: "Arial, sans-serif",
-  margin: 0,
-  padding: 0,
-  background: "#f4f7fb",
-  color: "#0B1F3A",
-};
+/* ================= STYLES ================= */
 
 const navbar = {
-  background: "#081B33",
+  background: "#061B3A",
   color: "white",
   padding: "20px 40px",
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  position: "sticky",
+  position: "fixed",
+  width: "100%",
   top: 0,
   zIndex: 1000,
-};
-
-const logo = {
-  margin: 0,
-  fontSize: "28px",
 };
 
 const navLinks = {
@@ -225,85 +174,97 @@ const link = {
   fontWeight: "bold",
 };
 
-const heroSection = {
+const hero = {
+  position: "relative",
   minHeight: "100vh",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
+  backgroundImage: "url('/banner.jpg')",
   backgroundSize: "cover",
   backgroundPosition: "center",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
   textAlign: "center",
   color: "white",
-  padding: "40px",
+};
+
+const overlay = {
+  position: "absolute",
+  width: "100%",
+  height: "100%",
+  background: "rgba(0,0,0,0.55)",
 };
 
 const heroContent = {
+  position: "relative",
+  zIndex: 2,
+  padding: "20px",
   maxWidth: "900px",
 };
 
 const heroTitle = {
-  fontSize: "60px",
-  lineHeight: "1.2",
+  fontSize: "58px",
+  fontWeight: "bold",
 };
 
 const heroText = {
   fontSize: "22px",
-  marginTop: "20px",
   lineHeight: "1.8",
+  marginTop: "20px",
 };
 
 const heroButtons = {
   marginTop: "40px",
   display: "flex",
-  gap: "20px",
   justifyContent: "center",
+  gap: "20px",
   flexWrap: "wrap",
 };
 
-const primaryButton = {
-  background: "#1D4ED8",
+const primaryBtn = {
+  background: "#2563EB",
   color: "white",
   border: "none",
-  padding: "16px 36px",
-  borderRadius: "12px",
+  padding: "16px 32px",
+  borderRadius: "10px",
   fontSize: "18px",
   cursor: "pointer",
 };
 
-const secondaryButton = {
+const secondaryBtn = {
   background: "transparent",
   color: "white",
   border: "2px solid white",
-  padding: "16px 36px",
-  borderRadius: "12px",
+  padding: "16px 32px",
+  borderRadius: "10px",
   fontSize: "18px",
   cursor: "pointer",
 };
 
-const sectionStyle = {
+const section = {
   padding: "100px 40px",
 };
 
 const sectionTitle = {
   textAlign: "center",
   fontSize: "42px",
+  color: "#061B3A",
   marginBottom: "60px",
 };
 
-const servicesGrid = {
+const grid = {
   display: "grid",
   gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
   gap: "30px",
 };
 
-const cardStyle = {
+const card = {
   background: "white",
   borderRadius: "20px",
   overflow: "hidden",
   boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
 };
 
-const imageStyle = {
+const cardImage = {
   width: "100%",
   height: "240px",
   objectFit: "cover",
@@ -315,13 +276,9 @@ const cardContent = {
 
 const aboutSection = {
   padding: "100px 40px",
-  background: "#ffffff",
-};
-
-const aboutContainer = {
   display: "grid",
-  gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
-  gap: "40px",
+  gridTemplateColumns: "1fr 1fr",
+  gap: "50px",
   alignItems: "center",
 };
 
@@ -332,26 +289,32 @@ const aboutParagraph = {
   lineHeight: "1.8",
 };
 
+const list = {
+  marginTop: "20px",
+  lineHeight: "2",
+  fontSize: "18px",
+};
+
 const aboutImage = {
   width: "100%",
   borderRadius: "20px",
 };
 
 const contactSection = {
-  padding: "100px 40px",
-  background: "#0B1F3A",
+  background: "#061B3A",
   color: "white",
   textAlign: "center",
+  padding: "100px 20px",
 };
 
-const contactBox = {
-  fontSize: "22px",
-  lineHeight: "2",
+const contactTitle = {
+  fontSize: "42px",
+  marginBottom: "30px",
 };
 
 const footer = {
-  background: "#081B33",
+  background: "#04142D",
   color: "white",
   textAlign: "center",
-  padding: "30px",
+  padding: "25px",
 };
