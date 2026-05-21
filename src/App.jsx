@@ -1,10 +1,11 @@
-import React from "react";
+import "./App.css";
 import {
   FaWhatsapp,
   FaEnvelope,
-  FaGraduationCap,
   FaBookMedical,
+  FaGraduationCap,
   FaChartLine,
+  FaArrowRight,
 } from "react-icons/fa";
 
 function App() {
@@ -12,13 +13,13 @@ function App() {
     {
       title: "Medical Research",
       description:
-        "Professional support for clinical and academic medical research.",
+        "Professional clinical and academic medical research support.",
       image: "/medical-research.jpg",
     },
     {
       title: "Scientific Publication",
       description:
-        "Publication assistance for Scopus & ISI indexed journals.",
+        "Publication support for Scopus & ISI indexed journals.",
       image: "/scientific-publication.jpg",
     },
     {
@@ -30,154 +31,76 @@ function App() {
     {
       title: "Research Proposal",
       description:
-        "Complete research proposal writing for universities and boards.",
+        "Complete proposal writing for universities and medical boards.",
       image: "/research-proposal.jpg",
     },
     {
       title: "Saudi Board Support",
       description:
-        "Academic and research support for Saudi Board trainees.",
+        "Academic mentorship and Saudi Board exam preparation.",
       image: "/saudi-board.jpg",
     },
     {
       title: "CME Courses",
       description:
-        "Accredited medical education and CME training programs.",
+        "Accredited CME programs and medical training courses.",
       image: "/cme-courses.jpg",
     },
   ];
 
   return (
-    <div
-      style={{
-        fontFamily: "Arial, sans-serif",
-        backgroundColor: "#f4f7fb",
-        color: "#1e293b",
-      }}
-    >
-      {/* Navbar */}
-      <nav
-        style={{
-          background: "#001f54",
-          padding: "18px 8%",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          position: "sticky",
-          top: "0",
-          zIndex: "1000",
-          boxShadow: "0 2px 10px rgba(0,0,0,0.15)",
-        }}
-      >
-        <h1
-          style={{
-            color: "#fff",
-            margin: "0",
-            fontSize: "30px",
-            fontWeight: "bold",
-          }}
-        >
-          MedBriefsHub Academy
-        </h1>
+    <div className="app">
+      {/* HEADER */}
+      <header className="header">
+        <div className="container nav-container">
+          <h1 className="logo">MedBriefsHub Academy</h1>
 
-        <div style={{ display: "flex", gap: "25px" }}>
-          {["Home", "Services", "About", "Contact"].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              style={{
-                color: "#fff",
-                textDecoration: "none",
-                fontWeight: "600",
-                transition: "0.3s",
-              }}
-            >
-              {item}
-            </a>
-          ))}
+          <nav className="navbar">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </nav>
         </div>
-      </nav>
+      </header>
 
-      {/* Hero Section */}
+      {/* HERO SECTION */}
       <section
         id="home"
+        className="hero"
         style={{
-          height: "100vh",
-          backgroundImage:
-            "linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('/hero-bg.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          textAlign: "center",
-          color: "#fff",
-          padding: "20px",
+          backgroundImage: "url('/hero-bg.jpg')",
         }}
       >
-        <div>
-          <h2
-            style={{
-              fontSize: "58px",
-              fontWeight: "bold",
-              marginBottom: "25px",
-              lineHeight: "1.3",
-            }}
-          >
-            Empowering Medical Research <br />
+        <div className="hero-overlay"></div>
+
+        <div className="hero-content">
+          <span className="hero-badge">
+            Medical Research & Scientific Excellence
+          </span>
+
+          <h2>
+            Empowering Medical Research
+            <br />
             & Scientific Publishing
           </h2>
 
-          <p
-            style={{
-              maxWidth: "900px",
-              margin: "0 auto 35px",
-              fontSize: "22px",
-              lineHeight: "1.8",
-              color: "#e2e8f0",
-            }}
-          >
+          <p>
             Professional scientific research, publication guidance,
-            healthcare education, academic mentoring, and accredited
+            academic mentorship, healthcare education, and accredited
             medical training programs.
           </p>
 
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              gap: "20px",
-              flexWrap: "wrap",
-            }}
-          >
-            <a
-              href="#services"
-              style={{
-                background: "#2563eb",
-                color: "#fff",
-                padding: "16px 35px",
-                borderRadius: "10px",
-                textDecoration: "none",
-                fontWeight: "bold",
-                fontSize: "18px",
-              }}
-            >
-              Get Started
+          <div className="hero-buttons">
+            <a href="#services" className="btn-primary">
+              Explore Services
             </a>
 
             <a
               href="https://wa.me/966549354994"
               target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                border: "2px solid #fff",
-                color: "#fff",
-                padding: "16px 35px",
-                borderRadius: "10px",
-                textDecoration: "none",
-                fontWeight: "bold",
-                fontSize: "18px",
-              }}
+              rel="noreferrer"
+              className="btn-outline"
             >
               Book Consultation
             </a>
@@ -185,230 +108,170 @@ function App() {
         </div>
       </section>
 
-      {/* Services */}
-      <section
-        id="services"
-        style={{
-          padding: "100px 8%",
-        }}
-      >
-        <h2
-          style={{
-            textAlign: "center",
-            fontSize: "48px",
-            marginBottom: "70px",
-            color: "#001f54",
-          }}
-        >
-          Our Services
-        </h2>
+      {/* SERVICES */}
+      <section id="services" className="services section">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-subtitle">What We Offer</span>
+            <h2 className="section-title">Our Professional Services</h2>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-            gap: "35px",
-          }}
-        >
-          {services.map((service, index) => (
-            <div
-              key={index}
-              style={{
-                background: "#fff",
-                borderRadius: "20px",
-                overflow: "hidden",
-                boxShadow: "0 8px 25px rgba(0,0,0,0.08)",
-                transition: "0.3s",
-              }}
-            >
-              <img
-                src={service.image}
-                alt={service.title}
-                style={{
-                  width: "100%",
-                  height: "230px",
-                  objectFit: "cover",
-                }}
-              />
+            <p className="section-description">
+              Specialized medical research and academic support
+              tailored for healthcare professionals and trainees.
+            </p>
+          </div>
 
-              <div style={{ padding: "28px" }}>
-                <h3
-                  style={{
-                    fontSize: "28px",
-                    marginBottom: "15px",
-                    color: "#0f172a",
-                  }}
-                >
-                  {service.title}
-                </h3>
+          <div className="services-grid">
+            {services.map((service, index) => (
+              <div className="service-card" key={index}>
+                <div className="service-image-wrapper">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="service-image"
+                  />
+                </div>
 
-                <p
-                  style={{
-                    fontSize: "18px",
-                    lineHeight: "1.8",
-                    color: "#475569",
-                  }}
-                >
-                  {service.description}
-                </p>
+                <div className="service-content">
+                  <h3>{service.title}</h3>
+
+                  <p>{service.description}</p>
+
+                  <button className="service-btn">
+                    Learn More <FaArrowRight />
+                  </button>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* About */}
-      <section
-        id="about"
-        style={{
-          padding: "100px 8%",
-          background: "#eef2f7",
-        }}
-      >
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-            gap: "60px",
-            alignItems: "center",
-          }}
-        >
-          <div>
-            <h2
-              style={{
-                fontSize: "48px",
-                color: "#001f54",
-                marginBottom: "30px",
-              }}
-            >
-              About Us
-            </h2>
-
-            <p
-              style={{
-                fontSize: "20px",
-                lineHeight: "2",
-                marginBottom: "30px",
-                color: "#334155",
-              }}
-            >
-              MedBriefsHub Academy is a professional platform specializing in:
-            </p>
-
-            <ul
-              style={{
-                lineHeight: "2.3",
-                fontSize: "20px",
-                color: "#1e293b",
-              }}
-            >
-              <li>Medical Research</li>
-              <li>Scientific Publication</li>
-              <li>Healthcare Education</li>
-              <li>Academic Mentorship</li>
-              <li>Saudi Board Preparation</li>
-            </ul>
-          </div>
-
-          <div>
+      {/* ABOUT */}
+      <section id="about" className="about section">
+        <div className="container about-container">
+          <div className="about-image-box">
             <img
-              src="/about-us.jpg"
+              src="/about-doctors.jpg"
               alt="Doctors"
-              style={{
-                width: "100%",
-                borderRadius: "20px",
-                boxShadow: "0 8px 25px rgba(0,0,0,0.12)",
-              }}
+              className="about-image"
             />
           </div>
+
+          <div className="about-image-box">
+  <img
+    src="/about-doctors.jpg"
+    alt="Doctors"
+    className="about-image"
+  />
+</div>
+            <span className="section-subtitle">
+              About MedBriefsHub
+            </span>
+
+            <h2 className="section-title">
+              Excellence in Medical Education & Research
+            </h2>
+
+            <p>
+              MedBriefsHub Academy provides high-quality academic,
+              research, and scientific publication services for
+              healthcare professionals and medical trainees.
+            </p>
+
+            <ul className="about-list">
+              <li>✔ Medical Research Support</li>
+              <li>✔ Scientific Publication Assistance</li>
+              <li>✔ Healthcare Education Programs</li>
+              <li>✔ Academic Mentorship</li>
+              <li>✔ Saudi Board Preparation</li>
+            </ul>
+          </div>
         </div>
       </section>
 
-      {/* Stats */}
-      <section
-        style={{
-          padding: "90px 8%",
-          background: "#ffffff",
-        }}
-      >
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-            gap: "30px",
-            textAlign: "center",
-          }}
-        >
-          <div>
-            <FaBookMedical size={55} color="#2563eb" />
-            <h3 style={{ fontSize: "40px", margin: "15px 0" }}>120+</h3>
+      {/* STATS */}
+      <section className="stats">
+        <div className="container stats-grid">
+          <div className="stat-card">
+            <FaBookMedical className="stat-icon" />
+
+            <h3>120+</h3>
+
             <p>Published Research Papers</p>
           </div>
 
-          <div>
-            <FaGraduationCap size={55} color="#2563eb" />
-            <h3 style={{ fontSize: "40px", margin: "15px 0" }}>300+</h3>
+          <div className="stat-card">
+            <FaGraduationCap className="stat-icon" />
+
+            <h3>300+</h3>
+
             <p>Medical Trainees</p>
           </div>
 
-          <div>
-            <FaChartLine size={55} color="#2563eb" />
-            <h3 style={{ fontSize: "40px", margin: "15px 0" }}>95%</h3>
+          <div className="stat-card">
+            <FaChartLine className="stat-icon" />
+
+            <h3>95%</h3>
+
             <p>Research Success Rate</p>
           </div>
         </div>
       </section>
 
-      {/* Contact */}
-      <section
-        id="contact"
-        style={{
-          background: "#001f54",
-          color: "#fff",
-          padding: "100px 8%",
-          textAlign: "center",
-        }}
-      >
-        <h2
-          style={{
-            fontSize: "50px",
-            marginBottom: "40px",
-          }}
-        >
-          Contact Us
-        </h2>
+      {/* CONTACT */}
+      <section id="contact" className="contact">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-subtitle white-text">
+              Contact Information
+            </span>
 
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "22px",
-            fontSize: "22px",
-          }}
-        >
-          <p>
-            <FaEnvelope /> info@medbriefshub.com
-          </p>
+            <h2 className="section-title white-text">
+              Contact Us
+            </h2>
+          </div>
 
-          <p>
-            <FaWhatsapp /> +966 54 935 4994
-          </p>
+          <div className="contact-grid">
+            <div className="contact-card">
+              <FaEnvelope className="contact-icon" />
 
-          <p>Saudi Arabia 🇸🇦</p>
+              <h3>Email</h3>
+
+              <p>info@medbriefshub.com</p>
+            </div>
+
+            <div className="contact-card">
+              <FaWhatsapp className="contact-icon" />
+
+              <h3>WhatsApp</h3>
+
+              <p>+966 54 935 4994</p>
+            </div>
+
+            <div className="contact-card">
+              <h3>Location</h3>
+
+              <p>Saudi Arabia 🇸🇦</p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer
-        style={{
-          background: "#000814",
-          color: "#cbd5e1",
-          textAlign: "center",
-          padding: "25px",
-          fontSize: "16px",
-        }}
-      >
-        © 2026 MedBriefsHub Academy — All Rights Reserved.
+      {/* FOOTER */}
+      <footer className="footer">
+        <div className="container footer-content">
+          <h3>MedBriefsHub Academy</h3>
+
+          <p>
+            Professional Medical Research & Scientific Publication
+            Services.
+          </p>
+
+          <span>
+            © 2026 MedBriefsHub Academy — All Rights Reserved.
+          </span>
+        </div>
       </footer>
     </div>
   );
