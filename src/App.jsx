@@ -1,70 +1,36 @@
+import React from "react";
 import "./App.css";
 import {
   FaWhatsapp,
   FaEnvelope,
-  FaBookMedical,
   FaGraduationCap,
+  FaBookMedical,
   FaChartLine,
-  FaArrowRight,
+  FaFlask,
 } from "react-icons/fa";
 
 function App() {
-  const services = [
-    {
-      title: "Medical Research",
-      description:
-        "Professional clinical and academic medical research support.",
-      image: "/medical-research.jpg",
-    },
-    {
-      title: "Scientific Publication",
-      description:
-        "Publication support for Scopus & ISI indexed journals.",
-      image: "/scientific-publication.jpg",
-    },
-    {
-      title: "Data Analysis",
-      description:
-        "Advanced statistical analysis and healthcare data visualization.",
-      image: "/data-analysis.jpg",
-    },
-    {
-      title: "Research Proposal",
-      description:
-        "Complete proposal writing for universities and medical boards.",
-      image: "/research-proposal.jpg",
-    },
-    {
-      title: "Saudi Board Support",
-      description:
-        "Academic mentorship and Saudi Board exam preparation.",
-      image: "/saudi-board.jpg",
-    },
-    {
-      title: "CME Courses",
-      description:
-        "Accredited CME programs and medical training courses.",
-      image: "/cme-courses.jpg",
-    },
-  ];
-
   return (
     <div className="app">
-      {/* HEADER */}
-      <header className="header">
+
+      {/* ================= NAVBAR ================= */}
+      <header className="navbar">
         <div className="container nav-container">
           <h1 className="logo">MedBriefsHub Academy</h1>
 
-          <nav className="navbar">
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+          <nav>
+            <ul className="nav-links">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#stats">Statistics</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
           </nav>
         </div>
       </header>
 
-      {/* HERO SECTION */}
+      {/* ================= HERO ================= */}
       <section
         id="home"
         className="hero"
@@ -72,207 +38,213 @@ function App() {
           backgroundImage: "url('/hero-bg.jpg')",
         }}
       >
-        <div className="hero-overlay"></div>
+        <div className="overlay"></div>
 
-        <div className="hero-content">
-          <span className="hero-badge">
-            Medical Research & Scientific Excellence
-          </span>
-
+        <div className="hero-content container">
           <h2>
-            Empowering Medical Research
-            <br />
+            Empowering Medical Research <br />
             & Scientific Publishing
           </h2>
 
           <p>
-            Professional scientific research, publication guidance,
-            academic mentorship, healthcare education, and accredited
-            medical training programs.
+            Professional support in medical research, scientific publication,
+            healthcare education, CME programs, and Saudi Board preparation.
           </p>
 
           <div className="hero-buttons">
-            <a href="#services" className="btn-primary">
+            <a href="#services" className="btn primary-btn">
               Explore Services
             </a>
 
             <a
               href="https://wa.me/966549354994"
               target="_blank"
-              rel="noreferrer"
-              className="btn-outline"
+              rel="noopener noreferrer"
+              className="btn secondary-btn"
             >
-              Book Consultation
+              WhatsApp Us
             </a>
           </div>
         </div>
       </section>
 
-      {/* SERVICES */}
+      {/* ================= SERVICES ================= */}
       <section id="services" className="services section">
         <div className="container">
-          <div className="section-header">
-            <span className="section-subtitle">What We Offer</span>
-            <h2 className="section-title">Our Professional Services</h2>
-
-            <p className="section-description">
-              Specialized medical research and academic support
-              tailored for healthcare professionals and trainees.
-            </p>
-          </div>
+          <h2 className="section-title">Our Services</h2>
 
           <div className="services-grid">
-            {services.map((service, index) => (
-              <div className="service-card" key={index}>
-                <div className="service-image-wrapper">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="service-image"
-                  />
-                </div>
 
-                <div className="service-content">
-                  <h3>{service.title}</h3>
+            {/* CARD 1 */}
+            <div className="service-card">
+              <img
+                src="/medical-research.jpg"
+                alt="Medical Research"
+              />
 
-                  <p>{service.description}</p>
+              <div className="card-content">
+                <FaFlask className="card-icon" />
 
-                  <button className="service-btn">
-                    Learn More <FaArrowRight />
-                  </button>
-                </div>
+                <h3>Medical Research</h3>
+
+                <p>
+                  Clinical and academic research support with advanced
+                  methodologies and scientific consultation.
+                </p>
               </div>
-            ))}
+            </div>
+
+            {/* CARD 2 */}
+            <div className="service-card">
+              <img
+                src="/scientific-publication.jpg"
+                alt="Scientific Publication"
+              />
+
+              <div className="card-content">
+                <FaBookMedical className="card-icon" />
+
+                <h3>Scientific Publication</h3>
+
+                <p>
+                  Professional manuscript preparation and publication support
+                  for Scopus and ISI indexed journals.
+                </p>
+              </div>
+            </div>
+
+            {/* CARD 3 */}
+            <div className="service-card">
+              <img
+                src="/research-analysis.jpg"
+                alt="Data Analysis"
+              />
+
+              <div className="card-content">
+                <FaChartLine className="card-icon" />
+
+                <h3>Data Analysis</h3>
+
+                <p>
+                  Advanced statistical analysis, interpretation, and medical
+                  data visualization.
+                </p>
+              </div>
+            </div>
+
+            {/* CARD 4 */}
+            <div className="service-card">
+              <img
+                src="/saudi-board.jpg"
+                alt="Saudi Board"
+              />
+
+              <div className="card-content">
+                <FaGraduationCap className="card-icon" />
+
+                <h3>Saudi Board Support</h3>
+
+                <p>
+                  Comprehensive preparation programs and academic mentoring
+                  for Saudi Board trainees.
+                </p>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* ABOUT */}
+      {/* ================= ABOUT ================= */}
       <section id="about" className="about section">
         <div className="container about-container">
-          <div className="about-image-box">
+
+          <div className="about-text">
+            <h2 className="section-title">About Us</h2>
+
+            <p>
+              MedBriefsHub Academy is a professional educational and scientific
+              platform dedicated to supporting healthcare professionals,
+              researchers, and medical trainees.
+            </p>
+
+            <ul>
+              <li>Medical Research Support</li>
+              <li>Scientific Publication Assistance</li>
+              <li>CME Accredited Courses</li>
+              <li>Saudi Board Preparation</li>
+              <li>Healthcare Academic Mentorship</li>
+            </ul>
+          </div>
+
+          <div className="about-image">
             <img
               src="/about-doctors.jpg"
-              alt="Doctors"
-              className="about-image"
+              alt="Doctors Team"
             />
           </div>
 
-          <div className="about-image-box">
-  <img
-    src="/about-doctors.jpg"
-    alt="Doctors"
-    className="about-image"
-  />
-</div>
-            <span className="section-subtitle">
-              About MedBriefsHub
-            </span>
+        </div>
+      </section>
 
-            <h2 className="section-title">
-              Excellence in Medical Education & Research
-            </h2>
+      {/* ================= STATS ================= */}
+      <section id="stats" className="stats section">
+        <div className="container">
+
+          <div className="stats-grid">
+
+            <div className="stat-card">
+              <h3>120+</h3>
+              <p>Published Research Papers</p>
+            </div>
+
+            <div className="stat-card">
+              <h3>300+</h3>
+              <p>Medical Trainees</p>
+            </div>
+
+            <div className="stat-card">
+              <h3>95%</h3>
+              <p>Research Success Rate</p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* ================= CONTACT ================= */}
+      <section id="contact" className="contact section">
+
+        <div className="container">
+
+          <h2 className="section-title white">Contact Us</h2>
+
+          <div className="contact-info">
 
             <p>
-              MedBriefsHub Academy provides high-quality academic,
-              research, and scientific publication services for
-              healthcare professionals and medical trainees.
+              <FaEnvelope /> info@medbriefshub.com
             </p>
 
-            <ul className="about-list">
-              <li>✔ Medical Research Support</li>
-              <li>✔ Scientific Publication Assistance</li>
-              <li>✔ Healthcare Education Programs</li>
-              <li>✔ Academic Mentorship</li>
-              <li>✔ Saudi Board Preparation</li>
-            </ul>
+            <p>
+              <FaWhatsapp /> +966 54 935 4994
+            </p>
+
+            <p>Saudi Arabia 🇸🇦</p>
+
           </div>
+
         </div>
+
       </section>
 
-      {/* STATS */}
-      <section className="stats">
-        <div className="container stats-grid">
-          <div className="stat-card">
-            <FaBookMedical className="stat-icon" />
-
-            <h3>120+</h3>
-
-            <p>Published Research Papers</p>
-          </div>
-
-          <div className="stat-card">
-            <FaGraduationCap className="stat-icon" />
-
-            <h3>300+</h3>
-
-            <p>Medical Trainees</p>
-          </div>
-
-          <div className="stat-card">
-            <FaChartLine className="stat-icon" />
-
-            <h3>95%</h3>
-
-            <p>Research Success Rate</p>
-          </div>
-        </div>
-      </section>
-
-      {/* CONTACT */}
-      <section id="contact" className="contact">
-        <div className="container">
-          <div className="section-header">
-            <span className="section-subtitle white-text">
-              Contact Information
-            </span>
-
-            <h2 className="section-title white-text">
-              Contact Us
-            </h2>
-          </div>
-
-          <div className="contact-grid">
-            <div className="contact-card">
-              <FaEnvelope className="contact-icon" />
-
-              <h3>Email</h3>
-
-              <p>info@medbriefshub.com</p>
-            </div>
-
-            <div className="contact-card">
-              <FaWhatsapp className="contact-icon" />
-
-              <h3>WhatsApp</h3>
-
-              <p>+966 54 935 4994</p>
-            </div>
-
-            <div className="contact-card">
-              <h3>Location</h3>
-
-              <p>Saudi Arabia 🇸🇦</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FOOTER */}
+      {/* ================= FOOTER ================= */}
       <footer className="footer">
-        <div className="container footer-content">
-          <h3>MedBriefsHub Academy</h3>
-
-          <p>
-            Professional Medical Research & Scientific Publication
-            Services.
-          </p>
-
-          <span>
-            © 2026 MedBriefsHub Academy — All Rights Reserved.
-          </span>
-        </div>
+        <p>
+          © 2026 MedBriefsHub Academy — All Rights Reserved.
+        </p>
       </footer>
+
     </div>
   );
 }
