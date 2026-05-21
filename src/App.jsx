@@ -1,5 +1,6 @@
-export default function App() {
+import React from "react";
 
+export default function App() {
   const services = [
     {
       title: "Medical Research",
@@ -29,44 +30,39 @@ export default function App() {
     {
       title: "CME Courses",
       desc: "Accredited medical education and CME training programs.",
-      image: "/cme-courses.jpg",
+      image: "/CME-COURSES.jpg",
     },
   ];
 
   return (
-    <div style={{ fontFamily: "Arial", background: "#f4f7fb" }}>
-
+    <div style={appStyle}>
       {/* Navbar */}
       <nav style={navbar}>
-        <h2>MedBriefsHub Academy</h2>
+        <h2 style={logo}>MedBriefsHub Academy</h2>
 
         <div style={navLinks}>
-          <a href="#home" style={link}>Home</a>
-          <a href="#services" style={link}>Services</a>
-          <a href="#about" style={link}>About</a>
-          <a href="#contact" style={link}>Contact</a>
+          <a href="#home" style={linkStyle}>Home</a>
+          <a href="#services" style={linkStyle}>Services</a>
+          <a href="#about" style={linkStyle}>About</a>
+          <a href="#contact" style={linkStyle}>Contact</a>
         </div>
       </nav>
 
-      {/* Hero */}
-      <section id="home" style={hero}>
-
-        <div style={overlay}></div>
-
-        <div style={heroContent}>
+      {/* Hero Section */}
+      <section id="home" style={heroSection}>
+        <div style={overlay}>
           <h1 style={heroTitle}>
-            Empowering Medical Research
-            <br />
+            Empowering Medical Research <br />
             & Scientific Publishing
           </h1>
 
           <p style={heroText}>
             Professional scientific research, publication guidance,
-            academic mentoring, healthcare education,
-            and accredited medical training programs.
+            academic mentoring, healthcare education, and accredited
+            medical training programs.
           </p>
 
-          <div style={heroButtons}>
+          <div style={buttonContainer}>
             <button style={primaryBtn}>Get Started</button>
             <button style={secondaryBtn}>Book Consultation</button>
           </div>
@@ -74,44 +70,37 @@ export default function App() {
       </section>
 
       {/* Services */}
-      <section id="services" style={section}>
+      <section id="services" style={sectionStyle}>
         <h2 style={sectionTitle}>Our Services</h2>
 
-        <div style={grid}>
-
+        <div style={servicesGrid}>
           {services.map((service, index) => (
-
-            <div key={index} style={card}>
-
+            <div key={index} style={cardStyle}>
               <img
                 src={service.image}
                 alt={service.title}
-                style={cardImage}
+                style={imageStyle}
               />
 
               <div style={cardContent}>
                 <h3>{service.title}</h3>
                 <p>{service.desc}</p>
               </div>
-
             </div>
-
           ))}
-
         </div>
       </section>
 
       {/* About */}
       <section id="about" style={aboutSection}>
-
         <div style={aboutText}>
           <h2 style={sectionTitle}>About Us</h2>
 
-          <p style={aboutParagraph}>
+          <p style={paragraph}>
             MedBriefsHub Academy is a professional platform specializing in:
           </p>
 
-          <ul style={list}>
+          <ul style={listStyle}>
             <li>Medical Research</li>
             <li>Scientific Publication</li>
             <li>Healthcare Education</li>
@@ -125,42 +114,49 @@ export default function App() {
           alt="Doctors"
           style={aboutImage}
         />
-
       </section>
 
       {/* Contact */}
       <section id="contact" style={contactSection}>
-
         <h2 style={contactTitle}>Contact Us</h2>
 
         <p>Email: info@medbriefshub.com</p>
         <p>WhatsApp: +966 500000000</p>
         <p>Saudi Arabia 🇸🇦</p>
-
       </section>
 
       {/* Footer */}
       <footer style={footer}>
         © 2026 MedBriefsHub Academy — All Rights Reserved.
       </footer>
-
     </div>
   );
 }
 
 /* ================= STYLES ================= */
 
+const appStyle = {
+  fontFamily: "Arial, sans-serif",
+  background: "#f4f7fb",
+  color: "#0b1f3a",
+};
+
 const navbar = {
-  background: "#061B3A",
-  color: "white",
+  position: "fixed",
+  top: 0,
+  width: "100%",
+  background: "#001f4d",
   padding: "20px 40px",
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  position: "fixed",
-  width: "100%",
-  top: 0,
   zIndex: 1000,
+  boxShadow: "0 2px 10px rgba(0,0,0,0.2)",
+};
+
+const logo = {
+  color: "white",
+  fontSize: "28px",
 };
 
 const navLinks = {
@@ -168,52 +164,43 @@ const navLinks = {
   gap: "20px",
 };
 
-const link = {
+const linkStyle = {
   color: "white",
   textDecoration: "none",
   fontWeight: "bold",
 };
 
-const hero = {
-  position: "relative",
-  minHeight: "100vh",
-  backgroundImage: "url('/banner.jpg')",
+const heroSection = {
+  height: "100vh",
+  backgroundImage:
+    "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/banner.jpg')",
   backgroundSize: "cover",
   backgroundPosition: "center",
   display: "flex",
-  justifyContent: "center",
   alignItems: "center",
+  justifyContent: "center",
   textAlign: "center",
   color: "white",
+  padding: "20px",
 };
 
 const overlay = {
-  position: "absolute",
-  width: "100%",
-  height: "100%",
-  background: "rgba(0,0,0,0.55)",
-};
-
-const heroContent = {
-  position: "relative",
-  zIndex: 2,
-  padding: "20px",
   maxWidth: "900px",
 };
 
 const heroTitle = {
-  fontSize: "58px",
+  fontSize: "60px",
+  marginBottom: "20px",
   fontWeight: "bold",
 };
 
 const heroText = {
   fontSize: "22px",
   lineHeight: "1.8",
-  marginTop: "20px",
+  marginBottom: "40px",
 };
 
-const heroButtons = {
-  marginTop: "40px",
+const buttonContainer = {
   display: "flex",
   justifyContent: "center",
   gap: "20px",
@@ -221,10 +208,10 @@ const heroButtons = {
 };
 
 const primaryBtn = {
-  background: "#2563EB",
+  background: "#2563eb",
   color: "white",
+  padding: "15px 35px",
   border: "none",
-  padding: "16px 32px",
   borderRadius: "10px",
   fontSize: "18px",
   cursor: "pointer",
@@ -233,40 +220,41 @@ const primaryBtn = {
 const secondaryBtn = {
   background: "transparent",
   color: "white",
+  padding: "15px 35px",
   border: "2px solid white",
-  padding: "16px 32px",
   borderRadius: "10px",
   fontSize: "18px",
   cursor: "pointer",
 };
 
-const section = {
+const sectionStyle = {
   padding: "100px 40px",
 };
 
 const sectionTitle = {
   textAlign: "center",
   fontSize: "42px",
-  color: "#061B3A",
   marginBottom: "60px",
+  color: "#001f4d",
 };
 
-const grid = {
+const servicesGrid = {
   display: "grid",
-  gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+  gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
   gap: "30px",
 };
 
-const card = {
+const cardStyle = {
   background: "white",
   borderRadius: "20px",
   overflow: "hidden",
-  boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
+  boxShadow: "0 8px 20px rgba(0,0,0,0.08)",
+  transition: "0.3s",
 };
 
-const cardImage = {
+const imageStyle = {
   width: "100%",
-  height: "240px",
+  height: "220px",
   objectFit: "cover",
 };
 
@@ -275,36 +263,38 @@ const cardContent = {
 };
 
 const aboutSection = {
-  padding: "100px 40px",
   display: "grid",
-  gridTemplateColumns: "1fr 1fr",
-  gap: "50px",
+  gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
   alignItems: "center",
+  gap: "40px",
+  padding: "100px 40px",
 };
 
-const aboutText = {};
-
-const aboutParagraph = {
+const aboutText = {
   fontSize: "20px",
-  lineHeight: "1.8",
+  lineHeight: "2",
 };
 
-const list = {
-  marginTop: "20px",
-  lineHeight: "2",
-  fontSize: "18px",
+const paragraph = {
+  marginBottom: "20px",
+};
+
+const listStyle = {
+  lineHeight: "2.2",
 };
 
 const aboutImage = {
   width: "100%",
   borderRadius: "20px",
+  boxShadow: "0 8px 20px rgba(0,0,0,0.15)",
 };
 
 const contactSection = {
-  background: "#061B3A",
+  background: "#001f4d",
   color: "white",
   textAlign: "center",
   padding: "100px 20px",
+  lineHeight: "2.5",
 };
 
 const contactTitle = {
@@ -313,8 +303,8 @@ const contactTitle = {
 };
 
 const footer = {
-  background: "#04142D",
+  background: "#001633",
   color: "white",
   textAlign: "center",
-  padding: "25px",
+  padding: "20px",
 };
